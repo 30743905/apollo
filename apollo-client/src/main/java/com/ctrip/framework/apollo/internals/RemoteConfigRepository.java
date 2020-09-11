@@ -133,6 +133,7 @@ public class RemoteConfigRepository extends AbstractConfigRepository {
     Transaction transaction = Tracer.newTransaction("Apollo.ConfigService", "syncRemoteConfig");
 
     try {
+      //缓存中的ApolloConfig
       ApolloConfig previous = m_configCache.get();
       ApolloConfig current = loadApolloConfig();
 
